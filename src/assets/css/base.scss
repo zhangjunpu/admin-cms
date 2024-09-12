@@ -1,0 +1,46 @@
+@mixin fl($direction: row) {
+  display: flex;
+  flex-direction: $direction;
+}
+
+.fl {
+  @include fl;
+}
+
+.fl-aic {
+  @include fl;
+  align-items: center;
+}
+
+.fl-c {
+  @include fl;
+  justify-content: center;
+  align-items: center;
+}
+
+.fl-csb {
+  @include fl;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.flv {
+  @include fl(column);
+}
+
+.flv-aic {
+  @include fl(column);
+  align-items: center;
+}
+
+.flv-c {
+  @include fl(column);
+  justify-content: center;
+  align-items: center;
+}
+
+.flv-csb {
+  @include fl(column);
+  justify-content: space-between;
+  align-items: center;
+}

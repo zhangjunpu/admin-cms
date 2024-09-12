@@ -5,7 +5,7 @@ const router = createRouter({
   routes: [
     {
       path: '/',
-      redirect: '/login',
+      redirect: '/main',
     },
     {
       path: '/main',
@@ -18,6 +18,11 @@ const router = createRouter({
       component: import('../views/login/login.vue'),
     },
   ],
+})
+
+// 路由守卫
+router.beforeEach((to, from) => {
+  console.log(to, '---', from)
 })
 
 export default router
