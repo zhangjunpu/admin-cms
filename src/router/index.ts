@@ -1,3 +1,4 @@
+import { getToken } from '@/cache/login'
 import { createRouter, createWebHistory } from 'vue-router'
 
 const router = createRouter({
@@ -23,6 +24,9 @@ const router = createRouter({
 // 路由守卫
 router.beforeEach((to, from) => {
   console.log(to, '---', from)
+  if (to.path === '/main' && !getToken()) {
+    return '/login'
+  }
 })
 
 export default router
